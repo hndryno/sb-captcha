@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org]">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Pak David</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  	<div class="container mt-5">
+  		<h1>Tambah Product</h1>
+  	 	<form action="#" th:action="@{/saveProduct}" th:object="${product}" method="POST">
+  	 		<input type="text" th:field = "*{name}" placeholder="Masukan nama product" class="form-control mb-4 col-4">
+  	 		<input type="text" th:field = "*{description}" placeholder="Masukan deskripsi product" class="form-control mb-4 col-4">
+  	 		<input type="text" th:field = "*{price}" placeholder="Masukan harga product" class="form-control mb-4 col-4">
+  	 		 <div class="g-recaptcha" 
+				data-sitekey="6LfpoiwcAAAAAP0fvnb97lOZraBYKRg_ygCgXMbh">
+				 </div>
+  	 		<button class="btn btn-primary">
+  	 			Tambah product
+  	 		</button>
+  	 	</form>
+  	 	 <div th:if="${message!=null}"> 
+         <span class="alert alert-danger" th:text="${message}"></span>
+  	 	 </div>
+  	</div>
+</body>
+
+</html>
